@@ -20,6 +20,7 @@ brews:
     tap:
       owner: kcaebe
       name: dns-heaven-homebrew
+      branch: main
     folder: Formula
     dependencies:
       - name: go
