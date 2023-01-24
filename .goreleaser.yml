@@ -19,7 +19,7 @@ brews:
     description: "Fixes stupid macOS DNS stack (/etc/resolv.conf)"
     tap:
       owner: kcaebe
-      name: tap
+      name: dns-heaven-homebrew
     folder: Formula
     dependencies:
       - name: go
