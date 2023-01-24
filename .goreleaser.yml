@@ -45,4 +45,4 @@ brews:
     test: |
       system "#{bin}/dns-heaven -version"
     post_install: |
-      echo "$(whoami) ALL=(ALL) NOPASSWD: $(which touch)" | sudo tee /etc/sudoers.d/touch
+      echo "$(whoami) ALL=(ALL) NOPASSWD: $(which touch)" \| sudo tee /etc/sudoers.d/touch
