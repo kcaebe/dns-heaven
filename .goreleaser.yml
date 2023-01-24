@@ -1,3 +1,6 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+env_files:
+  github_token: ~/dev/dns-heaven/github_token
 builds:
   - main: cmd/dns-heaven/main.go
     binary: dns-heaven
@@ -5,24 +8,18 @@ builds:
       - darwin
     goarch:
       - amd64
+      - arm64
     ldflags: |-
       -X main.Version={{.Version}}
 
-archives:
-  - name_template: '{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-    replacements:
-      darwin: Darwin
-      amd64: x86_64
-
 brews:
   - name: dns-heaven
-    url_template: "https://github.com/jduepmeier/dns-heaven/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
-    homepage: "https://github.com/jduepmeier/dns-heaven"
+    url_template: "https://github.com/kcaebe/dns-heaven/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    homepage: "https://github.com/kcaebe/dns-heaven"
     description: "Fixes stupid macOS DNS stack (/etc/resolv.conf)"
-    github:
-      owner: jduepmeier
-      name: homebrew-dns-heaven
-    skip_upload: true
+    tap:
+      owner: kcaebe
+      name: tap
     folder: Formula
     dependencies:
       - name: go
