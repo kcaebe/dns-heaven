@@ -19,7 +19,7 @@ brews:
     description: "Fixes stupid macOS DNS stack (/etc/resolv.conf)"
     tap:
       owner: kcaebe
-      name: dns-heaven-homebrew
+      name: homebrew-dns-heaven
       branch: main
     folder: Formula
     dependencies:
@@ -33,6 +33,7 @@ brews:
           <string>com.greenboxal.dnsheaven</string>
           <key>ProgramArguments</key>
           <array>
+              <string>sudo</string>
               <string>#{bin}/dns-heaven</string>
           </array>
           <key>KeepAlive</key>
