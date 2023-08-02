@@ -17,7 +17,7 @@ brews:
     url_template: "https://github.com/kcaebe/dns-heaven/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     homepage: "https://github.com/kcaebe/dns-heaven"
     description: "Fixes stupid macOS DNS stack (/etc/resolv.conf)"
-    tap:
+    repository:
       owner: kcaebe
       name: homebrew-dns-heaven
       branch: main
