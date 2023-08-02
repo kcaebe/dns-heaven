@@ -1,3 +1,3 @@
 #!/bin/bash
 
-goreleaser release --rm-dist 
+goreleaser release --clean
