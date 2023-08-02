@@ -24,25 +24,9 @@ brews:
     folder: Formula
     dependencies:
       - name: go
-    plist: |
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-          <key>Label</key>
-          <string>com.greenboxal.dnsheaven</string>
-          <key>ProgramArguments</key>
-          <array>
-              <string>sudo</string>
-              <string>#{bin}/dns-heaven</string>
-          </array>
-          <key>KeepAlive</key>
-          <true/>
-          <key>RunAtLoad</key>
-          <true/>
-      </dict>
-      </plist>
+    service: |
+      run [#{bin}/dns-heaven]
+      keep_alive true
+      requires_root true
     test: |
       system "#{bin}/dns-heaven -version"
-    post_install: |
-      'echo "$(whoami) ALL=(ALL) NOPASSWD: $(which touch)" | sudo tee /etc/sudoers.d/touch'
