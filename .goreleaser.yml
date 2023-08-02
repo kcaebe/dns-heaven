@@ -27,6 +27,6 @@ brews:
     service: |
       run bin/"dns-heaven"
       keep_alive true
-      requires_root true
+      require_root true
     test: |
       system 'bin/"dns-heaven" -version'
