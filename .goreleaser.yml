@@ -25,8 +25,8 @@ brews:
     dependencies:
       - name: go
     service: |
-      run [#{bin}/dns-heaven]
+      run bin/"dns-heaven"
       keep_alive true
       requires_root true
     test: |
-      system "#{bin}/dns-heaven -version"
+      system 'bin/"dns-heaven" -version'
